@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
  * @author Nery
  */
 public abstract class Entidade {
+
     protected long id;
     protected LocalDateTime dtCadastro;
-    protected LocalDateTime dtAtualizacao;
 
     public long getId() {
         return id;
@@ -25,13 +25,5 @@ public abstract class Entidade {
 
     public void setDtCadastro(LocalDateTime dtCadastro) {
         this.dtCadastro = dtCadastro;
-    }
-
-    public LocalDateTime getDtAtualizacao() {
-        return dtAtualizacao;
-    }
-
-    public void setDtAtualizacao(LocalDateTime dtAtualizacao) {
-        this.dtAtualizacao = dtAtualizacao;
     }
 }

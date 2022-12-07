@@ -1,10 +1,21 @@
 package View;
 
+import Controller.CargoController;
+import Controller.FuncionarioController;
+import Model.Cargo;
+import Model.Funcionario;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class CadastroFuncionario extends javax.swing.JFrame {
 
+    private FuncionarioController funcionarioController;
+    private CargoController cargoController;
     
     public CadastroFuncionario() {
         initComponents();
+        funcionarioController = new FuncionarioController();
+        cargoController = new CargoController();
     }
 
     
@@ -110,6 +121,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton2.setText("Cadastrar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel10.setText("Cargo");
@@ -245,6 +261,14 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new Cargos().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Cargo cargo = new Cargo("TI", 2000f);
+        Funcionario funcionario = new Funcionario("Teste", LocalDate.now(), "cpf", "email", "telefone", 2000f, 500f, cargo);
+        
+        cargoController.salvar(cargo);
+        funcionarioController.salvar(funcionario);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     
     

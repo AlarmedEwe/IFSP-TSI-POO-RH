@@ -1,6 +1,7 @@
 package Model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -25,6 +26,8 @@ public class Funcionario extends Entidade {
         this.salario = salario;
         this.beneficios = beneficios;
         this.cargo = cargo;
+        
+        this.dtCadastro = LocalDateTime.now();
     }
 
     public String getNome() {
@@ -90,6 +93,18 @@ public class Funcionario extends Entidade {
     public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(nome).append(";");
+        sb.append(dtNascimento).append(";");
+        sb.append(cpf).append(";");
+        sb.append(email).append(";");
+        sb.append(telefone).append(";");
+        sb.append(salario).append(";");
+        sb.append(beneficios).append(";");
+        sb.append(cargo.getDescricao()).append(";");
+        return sb.toString();
+    }
 }
