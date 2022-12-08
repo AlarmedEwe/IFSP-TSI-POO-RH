@@ -20,9 +20,6 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         cargoController = new CargoController();
 
         ArrayList<Cargo> cargos = cargoController.buscar();
-        for (int i = 0; i < cargos.size(); i++) {
-            System.out.println(cargos.get(i).toString());
-        }
     }
 
     @SuppressWarnings("unchecked")
