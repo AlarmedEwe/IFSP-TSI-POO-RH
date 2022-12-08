@@ -25,6 +25,8 @@ public class Funcionarios extends javax.swing.JFrame {
      */
     public Funcionarios() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
         funcionarioController = new FuncionarioController();
         preencherTabela();
     }

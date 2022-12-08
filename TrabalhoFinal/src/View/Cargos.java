@@ -7,6 +7,7 @@ public class Cargos extends javax.swing.JFrame {
      */
     public Cargos() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")

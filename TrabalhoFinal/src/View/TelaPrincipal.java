@@ -16,6 +16,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -34,10 +35,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Funcionarios");
+        jLabel3.setText("Listagem de Funcionarios");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/WhatsApp Image 2022-12-06 at 12.40.41 (1).jpeg"))); // NOI18N
         jButton1.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
