@@ -2,9 +2,13 @@ package Controller;
 
 import Interfaces.IController;
 import Model.Cargo;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  *
@@ -34,6 +38,48 @@ public class CargoController implements IController<Cargo> {
             writer.close();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
+        }
+    }
+
+    @Override
+    public ArrayList<Cargo> buscar() {
+        try {
+            FileReader file = new FileReader(arquivo);
+            BufferedReader reader = new BufferedReader(file);
+
+            ArrayList<Cargo> lista = new ArrayList<Cargo>();
+
+            int i = 0;
+            while (reader.ready()) {
+                try {
+                    String linha = reader.readLine();
+
+                    if (++i == 1) {
+                        continue;
+                    }
+                    
+                    String[] colunas = linha.split(";");
+
+                    Cargo cargo = new Cargo(
+                            Long.parseLong(colunas[0]),
+                            colunas[1],
+                            Float.parseFloat(colunas[2]),
+                            LocalDateTime.parse(colunas[3])
+                    );
+
+                    lista.add(cargo);
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+
+            reader.close();
+            file.close();
+
+            return lista;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            return null;
         }
     }
 

@@ -157,7 +157,7 @@
           <Font name="Tahoma" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Preencha o Formularia"/>
+        <Property name="text" type="java.lang.String" value="Cadastrar novo funcion&#xe1;rio"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">

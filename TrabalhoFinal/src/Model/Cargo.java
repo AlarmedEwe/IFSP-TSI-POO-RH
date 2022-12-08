@@ -14,8 +14,15 @@ public class Cargo extends Entidade {
     public Cargo(String descricao, float salarioBase) {
         this.descricao = descricao;
         this.salarioBase = salarioBase;
-        
+
         this.dtCadastro = LocalDateTime.now();
+    }
+
+    public Cargo(long id, String descricao, float salarioBase, LocalDateTime dtCadastro) {
+        this.id = id;
+        this.descricao = descricao;
+        this.salarioBase = salarioBase;
+        this.dtCadastro = dtCadastro;
     }
 
     public String getDescricao() {

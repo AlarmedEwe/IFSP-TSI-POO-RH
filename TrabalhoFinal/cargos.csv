@@ -1,4 +1,4 @@
-#;Descricao;Salario Base;Dt.Cadastro
-1;RH;1500;04/12/2022
-2;TI;2000;04/12/2022
-3;Gerente Geral;10000;04/12/2022
+#;Descricao;Salario Base;Dt.Cadastro;
+1;RH;1500;2022-12-04T00:00:00.000000000;
+2;TI;2000;2022-12-04T00:00:00.000000000;
+3;Gerente Geral;10000;2022-12-04T00:00:00.000000000;

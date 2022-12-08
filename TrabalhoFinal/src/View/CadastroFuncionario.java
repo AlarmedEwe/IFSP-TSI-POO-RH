@@ -6,6 +6,8 @@ import Model.Cargo;
 import Model.Funcionario;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class CadastroFuncionario extends javax.swing.JFrame {
 
@@ -16,6 +18,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         initComponents();
         funcionarioController = new FuncionarioController();
         cargoController = new CargoController();
+
+        ArrayList<Cargo> cargos = cargoController.buscar();
+        for (int i = 0; i < cargos.size(); i++) {
+            System.out.println(cargos.get(i).toString());
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -47,7 +54,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Preencha o Formularia");
+        jLabel1.setText("Cadastrar novo funcionário");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel2.setText("Nome completo");
@@ -287,8 +294,10 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             );
 
             funcionarioController.salvar(funcionario);
+
+            JOptionPane.showMessageDialog(this, "Funcionário salvo com sucesso!");
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            JOptionPane.showMessageDialog(this, "ERRO: " + ex.getMessage());
         }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 

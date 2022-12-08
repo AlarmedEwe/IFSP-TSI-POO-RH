@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
  * @author Nery
  */
 public class Funcionario extends Entidade {
+
     private String nome;
     private LocalDate dtNascimento;
     private String cpf;
@@ -17,7 +18,10 @@ public class Funcionario extends Entidade {
     private float beneficios;
     private Cargo cargo;
 
-    public Funcionario(String nome, LocalDate dtNascimento, String cpf, String email, String telefone, float salario, float beneficios, Cargo cargo) {
+    public Funcionario(
+            String nome, LocalDate dtNascimento, String cpf, String email,
+            String telefone, float salario, float beneficios, Cargo cargo
+    ) {
         this.nome = nome;
         this.dtNascimento = dtNascimento;
         this.cpf = cpf;
@@ -26,8 +30,25 @@ public class Funcionario extends Entidade {
         this.salario = salario;
         this.beneficios = beneficios;
         this.cargo = cargo;
-        
+
         this.dtCadastro = LocalDateTime.now();
+    }
+
+    public Funcionario(
+            long id, String nome, LocalDate dtNascimento, String cpf,
+            String email, String telefone, float salario, float beneficios,
+            Cargo cargo, LocalDateTime dtCadastro
+    ) {
+        this.id = id;
+        this.nome = nome;
+        this.dtNascimento = dtNascimento;
+        this.cpf = cpf;
+        this.email = email;
+        this.telefone = telefone;
+        this.salario = salario;
+        this.beneficios = beneficios;
+        this.cargo = cargo;
+        this.dtCadastro = dtCadastro;
     }
 
     public String getNome() {
