@@ -23,7 +23,7 @@ public class FuncionarioController implements IController<Funcionario> {
             PrintWriter writer = new PrintWriter(file);
 
             if (precisaCriarCabecalho) {
-                writer.printf("Nome;Dt.Nasc;CPF;Email;Telefone;Salario;Beneficios;Cargo;");
+                writer.printf("#;Nome;Dt.Nasc;CPF;Email;Telefone;Salario;Beneficios;Cargo;Dt.Cadastro;");
             }
 
             writer.printf("\n" + funcionario.toString());

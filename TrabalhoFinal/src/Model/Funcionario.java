@@ -97,6 +97,7 @@ public class Funcionario extends Entidade {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append(id).append(";");
         sb.append(nome).append(";");
         sb.append(dtNascimento).append(";");
         sb.append(cpf).append(";");
@@ -105,6 +106,7 @@ public class Funcionario extends Entidade {
         sb.append(salario).append(";");
         sb.append(beneficios).append(";");
         sb.append(cargo.getDescricao()).append(";");
+        sb.append(dtCadastro).append(";");
         return sb.toString();
     }
 }
